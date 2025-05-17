@@ -1,45 +1,27 @@
-Overview
-========
+# DAG Versioning Example (Airflow 3.x)
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+Airflow 3.x에서 새롭게 도입된 **DAG Versioning** 기능을 실습하기 위한 예제입니다.  
+`LocalDagBundle`과 `GitDagBundle`을 통해 DAG 버전 관리 방식을 비교해볼 수 있습니다.
 
-Project Contents
-================
+> 자세한 설명과 실습 과정은 [Apache Airflow DAG Versioning 기능 알아보기](https://discourse.airflow-kr.org/t/apache-airflow-dag-versioning/355?u=choo121600)에서 확인하실 수 있습니다.
 
-Your Astro project contains the following files and folders:
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
-    - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://www.astronomer.io/docs/learn/get-started-with-airflow).
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+## 주요 내용
 
-Deploy Your Project Locally
-===========================
+- Airflow 3.x의 DAG Versioning 기능 실습
+- DAG 실행 시점의 코드 버전 추적
+- `LocalDagBundle` vs `GitDagBundle` 비교
+- GitDagBundle 기반 DAG 버전 고정 및 재실행 실습
 
-Start Airflow on your local machine by running 'astro dev start'.
 
-This command will spin up five Docker containers on your machine, each for a different Airflow component:
+## 실행 방법
+1. 프로젝트 Fork & Clone
+2. Astro CLI 설치 혹은 설치 되어있다면 버전 확인
+3. astro dev start 명령어로 Airflow 실행
+4. `.env_example` 파일을 참고하여 env 파일로 설정
 
-- Postgres: Airflow's Metadata Database
-- Scheduler: The Airflow component responsible for monitoring and triggering tasks
-- DAG Processor: The Airflow component responsible for parsing DAGs
-- API Server: The Airflow component responsible for serving the Airflow UI and API
-- Triggerer: The Airflow component responsible for triggering deferred tasks
 
-When all five containers are ready the command will open the browser to the Airflow UI at http://localhost:8080/. You should also be able to access your Postgres Database at 'localhost:5432/postgres' with username 'postgres' and password 'postgres'.
-
-Note: If you already have either of the above ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
-
-Deploy Your Project to Astronomer
-=================================
-
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://www.astronomer.io/docs/astro/deploy-code/
-
-Contact
-=======
-
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+## Airflow 한국 사용자 모임
+포럼: https://discourse.airflow-kr.org
+오픈카카오톡: https://open.kakao.com/o/gM4hR8Pg
+meetup: https://www.meetup.com/apache-airflow-users-korea/
