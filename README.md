@@ -24,4 +24,4 @@ Airflow 3.x에서 새롭게 도입된 **DAG Versioning** 기능을 실습하기 
 ## Airflow 한국 사용자 모임
 - 포럼: [https://discourse.airflow-kr.org](https://discourse.airflow-kr.org)
 - 오픈카카오톡: [https://open.kakao.com/o/gM4hR8Pg](https://open.kakao.com/o/gM4hR8Pg)
-- meetup: [https://www.meetup.com/apache-airflow-users-korea/](https://www.meetup.com/apache-airflow-korea-user-group/)
+- meetup: [https://www.meetup.com/korea-apache-airflow-user-group](https://www.meetup.com/korea-apache-airflow-user-group)
