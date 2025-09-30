@@ -32,7 +32,8 @@ def dag_versioning_example():
     chain(
         task_1(),
         task_2(),
-        task_3()
+        task_3(),
+        task_4()
     )
 
 
